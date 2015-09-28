@@ -161,6 +161,22 @@ public class GildedRoseTest {
 
 
     @Test
+    public void backStagePasses11() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 24) };
+        Item[] itemsGolden = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 24) };
+        GildedRose app = new GildedRose(items);
+        GildedRoseGolden appGolden = new GildedRoseGolden(itemsGolden);
+
+        app.updateQuality();
+        appGolden.updateQuality();
+
+        assertThat(items[0].sellIn, is(itemsGolden[0].sellIn));
+        assertThat(items[0].sellIn, is(10));
+        assertThat(items[0].quality, is(itemsGolden[0].quality));
+        assertThat(items[0].quality, is(25));
+    }
+
+    @Test
     public void backStagePassesBellow11() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };
         Item[] itemsGolden = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };

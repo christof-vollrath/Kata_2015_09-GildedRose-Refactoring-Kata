@@ -8,8 +8,8 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            updateQuality(items[i]);
+        for (Item item : items) {
+            updateQuality(item);
         }
     }
 
@@ -17,8 +17,6 @@ class GildedRose {
         if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
             return;
         }
-
-        item.sellIn = item.sellIn - 1;
 
         if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             item.quality = item.quality + 1;
@@ -33,6 +31,8 @@ class GildedRose {
         } else {
             age(item);
         }
+
+        item.sellIn = item.sellIn - 1;
 
         if (item.sellIn < 0) {
             age(item);
