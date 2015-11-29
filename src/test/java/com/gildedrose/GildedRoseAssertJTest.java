@@ -236,7 +236,7 @@ public class GildedRoseAssertJTest {
         assertThat(items[0].sellIn).isEqualTo(itemsGolden[0].sellIn);
         assertThat(items[0].sellIn).isEqualTo(-2);
         assertThat(items[0].quality).isEqualTo(itemsGolden[0].quality);
-        assertThat(items[0].quality).isEqualTo(0);
+        assertThat(items[0].quality).isEqualTo(0)   ;
     }
 
 }
